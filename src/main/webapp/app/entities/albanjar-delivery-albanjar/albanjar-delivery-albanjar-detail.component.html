@@ -1,0 +1,46 @@
+
+<div *ngIf="albanjarDelivery">
+    <h2><span jhiTranslate="albanjarHipsterApp.albanjarDelivery.detail.title">Albanjar Delivery</span> {{albanjarDelivery.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="albanjarHipsterApp.albanjarDelivery.czone">Czone</span></dt>
+        <dd>
+            <span>{{albanjarDelivery.czone}}</span>
+        </dd>
+        <dt><span jhiTranslate="albanjarHipsterApp.albanjarDelivery.cda">Cda</span></dt>
+        <dd>
+            <span>{{albanjarDelivery.cda}}</span>
+        </dd>
+        <dt><span jhiTranslate="albanjarHipsterApp.albanjarDelivery.quantity">Quantity</span></dt>
+        <dd>
+            <span>{{albanjarDelivery.quantity}}</span>
+        </dd>
+        <dt><span jhiTranslate="albanjarHipsterApp.albanjarDelivery.albanjarCustomer">Albanjar Customer</span></dt>
+        <dd>
+            <div *ngIf="albanjarDelivery.albanjarCustomerId">
+                <a [routerLink]="['/albanjar-customer-albanjar', albanjarDelivery.albanjarCustomerId]">{{albanjarDelivery.albanjarCustomerId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="albanjarHipsterApp.albanjarDelivery.albanjarProduct">Albanjar Product</span></dt>
+        <dd>
+            <div *ngIf="albanjarDelivery.albanjarProductId">
+                <a [routerLink]="['/albanjar-product-albanjar', albanjarDelivery.albanjarProductId]">{{albanjarDelivery.albanjarProductId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'albanjar-delivery-albanjar/'+ albanjarDelivery.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

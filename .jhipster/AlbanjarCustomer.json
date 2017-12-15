@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "deliveries",
+            "otherEntityName": "albanjarDelivery",
+            "otherEntityRelationshipName": "albanjarCustomer"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "gender",
+            "fieldType": "Gender",
+            "fieldValues": "MR,MRS",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "firstname",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastname",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cin",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "adresse",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171215135653",
+    "entityTableName": "albanjar_customer",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "albanjar"
+}

@@ -1,0 +1,23 @@
+{
+    "albanjarHipsterApp": {
+        "albanjarProduct" : {
+            "home": {
+                "title": "Albanjar Products",
+                "createLabel": "Albanjar Product erstellen",
+                "createOrEditLabel": "Albanjar Product erstellen oder bearbeiten"
+            },
+            "created": "Albanjar Product erstellt mit ID {{ param }}",
+            "updated": "Albanjar Product aktualisiert mit ID {{ param }}",
+            "deleted": "Albanjar Product gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Albanjar Product {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Albanjar Product"
+            },
+            "name": "Name",
+            "pu": "Pu",
+            "deliveries": "Deliveries"
+        }
+    }
+}

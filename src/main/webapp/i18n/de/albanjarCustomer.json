@@ -1,0 +1,26 @@
+{
+    "albanjarHipsterApp": {
+        "albanjarCustomer" : {
+            "home": {
+                "title": "Albanjar Customers",
+                "createLabel": "Albanjar Customer erstellen",
+                "createOrEditLabel": "Albanjar Customer erstellen oder bearbeiten"
+            },
+            "created": "Albanjar Customer erstellt mit ID {{ param }}",
+            "updated": "Albanjar Customer aktualisiert mit ID {{ param }}",
+            "deleted": "Albanjar Customer gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Albanjar Customer {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Albanjar Customer"
+            },
+            "gender": "Gender",
+            "firstname": "Firstname",
+            "lastname": "Lastname",
+            "cin": "Cin",
+            "adresse": "Adresse",
+            "deliveries": "Deliveries"
+        }
+    }
+}

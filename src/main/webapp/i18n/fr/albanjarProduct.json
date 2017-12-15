@@ -1,0 +1,23 @@
+{
+    "albanjarHipsterApp": {
+        "albanjarProduct" : {
+            "home": {
+                "title": "AlbanjarProducts",
+                "createLabel": "Créer un nouveau Albanjar Product",
+                "createOrEditLabel": "Créer ou éditer un Albanjar Product"
+            },
+            "created": "Un nouveau Albanjar Product a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Albanjar Product avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Albanjar Product avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Albanjar Product {{ id }} ?"
+            },
+            "detail": {
+                "title": "Albanjar Product"
+            },
+            "name": "Name",
+            "pu": "Pu",
+            "deliveries": "Deliveries"
+        }
+    }
+}

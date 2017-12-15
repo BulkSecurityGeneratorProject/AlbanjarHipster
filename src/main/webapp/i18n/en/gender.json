@@ -1,0 +1,9 @@
+{
+    "albanjarHipsterApp": {
+        "Gender" : {
+            "null": "",
+            "MR": "MR",
+            "MRS": "MRS"
+        }
+    }
+}
