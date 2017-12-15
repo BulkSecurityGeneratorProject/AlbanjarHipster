@@ -1,0 +1,50 @@
+enum Gender {
+MR , MRS
+}
+
+entity AlbanjarCustomer {
+    gender Gender required ,
+	firstname String required ,
+    lastname String required,
+    cin String required,
+    adresse String,
+    
+}
+
+entity AlbanjarProduct {
+	name String required,
+    pu Double required 
+}
+
+
+entity AlbanjarDelivery {
+	czone String required,
+    cda String required,
+    quantity Double required
+}
+
+
+relationship OneToMany {
+	AlbanjarCustomer{deliveries} to AlbanjarDelivery
+}
+
+
+relationship OneToMany {
+	AlbanjarProduct{deliveries} to AlbanjarDelivery
+}
+
+
+
+
+// Set pagination options
+paginate AlbanjarCustomer, AlbanjarProduct with infinite-scroll
+paginate AlbanjarDelivery with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with albanjar
+
+
