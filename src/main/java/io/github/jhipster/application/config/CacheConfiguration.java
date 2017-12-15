@@ -41,6 +41,11 @@ public class CacheConfiguration {
             cm.createCache(io.github.jhipster.application.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.AlbanjarCustomer.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.AlbanjarCustomer.class.getName() + ".deliveries", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.AlbanjarProduct.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.AlbanjarProduct.class.getName() + ".deliveries", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.AlbanjarDelivery.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,82 @@
+<div>
+    <h2>
+        <span jhiTranslate="albanjarHipsterApp.albanjarDelivery.home.title">Albanjar Deliveries</span>
+        <button class="btn btn-primary float-right jh-create-entity create-albanjar-delivery-albanjar" [routerLink]="['/', { outlets: { popup: ['albanjar-delivery-albanjar-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="albanjarHipsterApp.albanjarDelivery.home.createLabel">
+            Create new Albanjar Delivery
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="albanjarDeliveries">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="czone"><span jhiTranslate="albanjarHipsterApp.albanjarDelivery.czone">Czone</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="cda"><span jhiTranslate="albanjarHipsterApp.albanjarDelivery.cda">Cda</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="quantity"><span jhiTranslate="albanjarHipsterApp.albanjarDelivery.quantity">Quantity</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="albanjarCustomerId"><span jhiTranslate="albanjarHipsterApp.albanjarDelivery.albanjarCustomer">Albanjar Customer</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="albanjarProductId"><span jhiTranslate="albanjarHipsterApp.albanjarDelivery.albanjarProduct">Albanjar Product</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let albanjarDelivery of albanjarDeliveries ;trackBy: trackId">
+                <td><a [routerLink]="['../albanjar-delivery-albanjar', albanjarDelivery.id ]">{{albanjarDelivery.id}}</a></td>
+                <td>{{albanjarDelivery.czone}}</td>
+                <td>{{albanjarDelivery.cda}}</td>
+                <td>{{albanjarDelivery.quantity}}</td>
+                <td>
+                    <div *ngIf="albanjarDelivery.albanjarCustomerId">
+                        <a [routerLink]="['../albanjar-customer-albanjar', albanjarDelivery.albanjarCustomerId  ]" >{{albanjarDelivery.albanjarCustomerId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="albanjarDelivery.albanjarProductId">
+                        <a [routerLink]="['../albanjar-product-albanjar', albanjarDelivery.albanjarProductId  ]" >{{albanjarDelivery.albanjarProductId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../albanjar-delivery-albanjar', albanjarDelivery.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'albanjar-delivery-albanjar/'+ albanjarDelivery.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'albanjar-delivery-albanjar/'+ albanjarDelivery.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="albanjarDeliveries && albanjarDeliveries.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

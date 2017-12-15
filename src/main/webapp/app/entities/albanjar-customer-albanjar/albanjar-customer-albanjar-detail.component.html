@@ -1,0 +1,42 @@
+
+<div *ngIf="albanjarCustomer">
+    <h2><span jhiTranslate="albanjarHipsterApp.albanjarCustomer.detail.title">Albanjar Customer</span> {{albanjarCustomer.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="albanjarHipsterApp.albanjarCustomer.gender">Gender</span></dt>
+        <dd>
+            <span jhiTranslate="{{'albanjarHipsterApp.Gender.' + albanjarCustomer.gender}}">{{albanjarCustomer.gender}}</span>
+        </dd>
+        <dt><span jhiTranslate="albanjarHipsterApp.albanjarCustomer.firstname">Firstname</span></dt>
+        <dd>
+            <span>{{albanjarCustomer.firstname}}</span>
+        </dd>
+        <dt><span jhiTranslate="albanjarHipsterApp.albanjarCustomer.lastname">Lastname</span></dt>
+        <dd>
+            <span>{{albanjarCustomer.lastname}}</span>
+        </dd>
+        <dt><span jhiTranslate="albanjarHipsterApp.albanjarCustomer.cin">Cin</span></dt>
+        <dd>
+            <span>{{albanjarCustomer.cin}}</span>
+        </dd>
+        <dt><span jhiTranslate="albanjarHipsterApp.albanjarCustomer.adresse">Adresse</span></dt>
+        <dd>
+            <span>{{albanjarCustomer.adresse}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'albanjar-customer-albanjar/'+ albanjarCustomer.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

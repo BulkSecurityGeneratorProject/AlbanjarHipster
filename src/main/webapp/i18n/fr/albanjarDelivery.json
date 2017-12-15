@@ -1,0 +1,25 @@
+{
+    "albanjarHipsterApp": {
+        "albanjarDelivery" : {
+            "home": {
+                "title": "AlbanjarDeliveries",
+                "createLabel": "Créer un nouveau Albanjar Delivery",
+                "createOrEditLabel": "Créer ou éditer un Albanjar Delivery"
+            },
+            "created": "Un nouveau Albanjar Delivery a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Albanjar Delivery avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Albanjar Delivery avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Albanjar Delivery {{ id }} ?"
+            },
+            "detail": {
+                "title": "Albanjar Delivery"
+            },
+            "czone": "Czone",
+            "cda": "Cda",
+            "quantity": "Quantity",
+            "albanjarCustomer": "Albanjar Customer",
+            "albanjarProduct": "Albanjar Product"
+        }
+    }
+}
